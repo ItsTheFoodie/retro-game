@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RETRO GAME</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.9/lib/p5.min.js"></script>
 </head>
 <body>
 <script>var butterfly = [  
@@ -18,11 +19,14 @@
 ];
 
 var dotSize = 8;
-//fill("IndianRed");
+function setup(){
+createCanvas(960,960);
+background("pink");
+fill("IndianRed");
+}
 
-function loop()
+function draw()
 {
-    clear();
     
     putSprite(butterfly, mouseX, mouseY, dotSize);
 }
