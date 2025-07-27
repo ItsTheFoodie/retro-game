@@ -8,6 +8,8 @@
 </head>
 <body>
 <script>
+var yValue = 0;
+var xValue;
 var butterfly = [  
     [0,0,0,0,0,0,0,0],
     [0,0,1,0,0,0,1,0],
@@ -31,18 +33,23 @@ var heart = [
 ]
 
 var dotSize = 8;
+
 function setup(){
 createCanvas(960,960);
 background("pink");
 fill("IndianRed");
-
+ xValue = random(0,960);
 }
 
-function draw()
-{
+function draw(){
     background("pink")
     putSprite(butterfly, mouseX, mouseY, dotSize);
-    putSprite(heart,0,0, dotSize)
+    putSprite(heart,xValue,yValue, dotSize)
+    if  (yValue < 960){
+    yValue++
+    }else{ yValue = 0 
+        xValue = random(0,960)
+    }
 }
 
 
