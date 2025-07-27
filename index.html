@@ -7,7 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.9/lib/p5.min.js"></script>
 </head>
 <body>
-<script>var butterfly = [  
+<script>
+var butterfly = [  
     [0,0,0,0,0,0,0,0],
     [0,0,1,0,0,0,1,0],
     [0,1,0,1,0,1,0,1],
@@ -18,17 +19,30 @@
     [0,0,0,0,0,0,0,0] 
 ];
 
+var heart = [
+    [0,0,0,0,0,0,0,],
+    [,0,1,0,0,0,1,0],
+    [1,1,1,0,1,1,1,],
+    [1,1,1,1,1,1,1,],
+    [1,1,1,1,1,1,1,],
+    [0,1,1,1,1,1,0,],
+    [0,0,1,1,1,0,0,],
+    [0,0,0,1,0,0,0,],
+]
+
 var dotSize = 8;
 function setup(){
 createCanvas(960,960);
 background("pink");
 fill("IndianRed");
+
 }
 
 function draw()
 {
     background("pink")
     putSprite(butterfly, mouseX, mouseY, dotSize);
+    putSprite(heart,0,0, dotSize)
 }
 
 
