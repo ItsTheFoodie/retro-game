@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RETRO GAME</title>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.9/lib/p5.min.js"></script>
+<script defer src="https://unpkg.com/p5"></script>
+
+
+<script defer src="https://unpkg.com/p5.collide2d"></script>
 </head>
 <body>
 <script>
 var yValue = 0;
 var xValue;
+var x = 448;
 var butterfly = [  
     [0,0,0,0,0,0,0,0],
     [0,0,1,0,0,0,1,0],
@@ -43,13 +48,20 @@ fill("IndianRed");
 
 function draw(){
     background("pink")
-    putSprite(butterfly, mouseX, mouseY, dotSize);
+    putSprite(butterfly, x, 860, dotSize);
     putSprite(heart,xValue,yValue, dotSize)
     if  (yValue < 960){
-    yValue++
-    }else{ yValue = 0 
+    yValue += 10;
+    }else{ 
+        yValue = 0 
         xValue = random(0,960) 
     }
+    if(keyIsDown(LEFT_ARROW)){
+      x -= 5;
+   }
+if(keyIsDown(RIGHT_ARROW)){
+    x += 5;
+}
 }
 
 
