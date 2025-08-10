@@ -12,6 +12,8 @@
 </head>
 <body>
 <script>
+var hit = false;
+var poly = [];
 var yValue = 0;
 var xValue;
 var x = 448;
@@ -44,6 +46,9 @@ createCanvas(960,960);
 background("pink");
 fill("IndianRed");
  xValue = random(0,960);
+ poly[0] = createVector(xValue,yValue);
+ poly[1] = createVector(xValue+56,yValue)
+ poly[2] = createVector(xValue+32,yValue+64)
 }
 
 function draw(){
@@ -62,6 +67,9 @@ function draw(){
 if(keyIsDown(RIGHT_ARROW)){
     x += 5;
 }
+ hit = collideCirclePoly(x+32,892,64,poly)
+
+ print('colliding?', hit);
 }
 
 
