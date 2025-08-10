@@ -1,4 +1,7 @@
 # retro-game
+#HOMEWORK 8/10
+
+- SCOREBOARD
 
 #HOMEWORK 8/03
 
