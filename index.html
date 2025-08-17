@@ -47,10 +47,13 @@ createCanvas(960,960);
 background("pink");
 fill("IndianRed");
  xValue = random(0,960);
-
+if(localStorage.getItem('HIGHSCORE') == null){
+localStorage.setItem('HIGHSCORE',0)
+}
 }
 
 function draw(){
+    console.log(localStorage.getItem('HIGHSCORE'))
     background("pink")
     putSprite(butterfly, x, 860, dotSize);
     putSprite(heart,xValue,yValue, dotSize)
@@ -78,6 +81,9 @@ if(keyIsDown(RIGHT_ARROW)){
 
  if(hit === true){
     score++
+    if(score > localStorage.getItem('HIGHSCORE')){
+        localStorage.setItem('HIGHSCORE',score)
+    }
     yValue = 0;
     xValue = random(0,960)
  }
