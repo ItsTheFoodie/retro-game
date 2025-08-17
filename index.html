@@ -76,7 +76,8 @@ if(keyIsDown(RIGHT_ARROW)){
 
  print('colliding?', hit);
  textSize(25)
- text("score:" + score, 10, 30);
+ text("Score: " + score, 10, 30);
+ text("Highscore: " + localStorage.getItem('HIGHSCORE'), 870,30)
 
 
  if(hit === true){
